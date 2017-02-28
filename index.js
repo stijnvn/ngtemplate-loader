@@ -53,7 +53,7 @@ module.exports = function (content) {
         "var html = " + html + ";\n" +
         (requireAngular ? "var angular = require('angular');\n" : "window.") +
         "angular.module('" + ngModule + "').run(['$templateCache', function(c) { c.put(path, html) }]);\n" +
-        "module.exports = path;";
+        "module.exports.templateUrl = path;";
 
     function findQuote(content, backwards) {
         var i = backwards ? content.length - 1 : 0;
